@@ -221,6 +221,7 @@ type ChatCompletion struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletion) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -254,6 +255,7 @@ type ChatCompletionChoice struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChoice) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChoice) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -275,6 +277,7 @@ type ChatCompletionChoiceLogprobs struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChoiceLogprobs) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChoiceLogprobs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -322,6 +325,7 @@ func (r ChatCompletionAllowedToolChoiceParam) MarshalJSON() (data []byte, err er
 	type shadow ChatCompletionAllowedToolChoiceParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionAllowedToolChoiceParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -359,6 +363,7 @@ func (r ChatCompletionAssistantMessageParam) MarshalJSON() (data []byte, err err
 	type shadow ChatCompletionAssistantMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionAssistantMessageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -377,6 +382,7 @@ func (r ChatCompletionAssistantMessageParamAudio) MarshalJSON() (data []byte, er
 	type shadow ChatCompletionAssistantMessageParamAudio
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionAssistantMessageParamAudio) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -393,6 +399,7 @@ type ChatCompletionAssistantMessageParamContentUnion struct {
 func (u ChatCompletionAssistantMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfArrayOfContentParts)
 }
+
 func (u *ChatCompletionAssistantMessageParamContentUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -418,6 +425,7 @@ type ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion struct {
 func (u ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfText, u.OfRefusal)
 }
+
 func (u *ChatCompletionAssistantMessageParamContentArrayOfContentPartUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -486,6 +494,7 @@ func (r ChatCompletionAssistantMessageParamFunctionCall) MarshalJSON() (data []b
 	type shadow ChatCompletionAssistantMessageParamFunctionCall
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionAssistantMessageParamFunctionCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -517,6 +526,7 @@ type ChatCompletionAudio struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionAudio) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionAudio) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -542,6 +552,7 @@ func (r ChatCompletionAudioParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionAudioParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionAudioParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -643,6 +654,7 @@ type ChatCompletionChunk struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunk) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunk) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -676,6 +688,7 @@ type ChatCompletionChunkChoice struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoice) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoice) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -710,6 +723,7 @@ type ChatCompletionChunkChoiceDelta struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDelta) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDelta) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -737,6 +751,7 @@ type ChatCompletionChunkChoiceDeltaFunctionCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDeltaFunctionCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDeltaFunctionCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -763,6 +778,7 @@ type ChatCompletionChunkChoiceDeltaToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDeltaToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDeltaToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -786,6 +802,7 @@ type ChatCompletionChunkChoiceDeltaToolCallFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceDeltaToolCallFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceDeltaToolCallFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -807,6 +824,7 @@ type ChatCompletionChunkChoiceLogprobs struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionChunkChoiceLogprobs) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionChunkChoiceLogprobs) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -875,6 +893,7 @@ type ChatCompletionContentPartUnionParam struct {
 func (u ChatCompletionContentPartUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfText, u.OfImageURL, u.OfInputAudio, u.OfFile)
 }
+
 func (u *ChatCompletionContentPartUnionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -965,6 +984,7 @@ func (r ChatCompletionContentPartFileParam) MarshalJSON() (data []byte, err erro
 	type shadow ChatCompletionContentPartFileParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartFileParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -975,6 +995,8 @@ type ChatCompletionContentPartFileFileParam struct {
 	FileData param.Opt[string] `json:"file_data,omitzero"`
 	// The ID of an uploaded file to use as input.
 	FileID param.Opt[string] `json:"file_id,omitzero"`
+
+	FileURL param.Opt[string] `json:"file_url,omitzero"`
 	// The name of the file, used when passing the file to the model as a string.
 	Filename param.Opt[string] `json:"filename,omitzero"`
 	paramObj
@@ -984,6 +1006,7 @@ func (r ChatCompletionContentPartFileFileParam) MarshalJSON() (data []byte, err 
 	type shadow ChatCompletionContentPartFileFileParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartFileFileParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1004,6 +1027,7 @@ type ChatCompletionContentPartImage struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionContentPartImage) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionContentPartImage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1037,6 +1061,7 @@ type ChatCompletionContentPartImageImageURL struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionContentPartImageImageURL) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionContentPartImageImageURL) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1057,6 +1082,7 @@ func (r ChatCompletionContentPartImageParam) MarshalJSON() (data []byte, err err
 	type shadow ChatCompletionContentPartImageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartImageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1077,6 +1103,7 @@ func (r ChatCompletionContentPartImageImageURLParam) MarshalJSON() (data []byte,
 	type shadow ChatCompletionContentPartImageImageURLParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartImageImageURLParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1103,6 +1130,7 @@ func (r ChatCompletionContentPartInputAudioParam) MarshalJSON() (data []byte, er
 	type shadow ChatCompletionContentPartInputAudioParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartInputAudioParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1122,6 +1150,7 @@ func (r ChatCompletionContentPartInputAudioInputAudioParam) MarshalJSON() (data 
 	type shadow ChatCompletionContentPartInputAudioInputAudioParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartInputAudioInputAudioParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1147,6 +1176,7 @@ func (r ChatCompletionContentPartRefusalParam) MarshalJSON() (data []byte, err e
 	type shadow ChatCompletionContentPartRefusalParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartRefusalParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1169,6 +1199,7 @@ type ChatCompletionContentPartText struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionContentPartText) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionContentPartText) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1201,6 +1232,7 @@ func (r ChatCompletionContentPartTextParam) MarshalJSON() (data []byte, err erro
 	type shadow ChatCompletionContentPartTextParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionContentPartTextParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1222,6 +1254,7 @@ func (r ChatCompletionCustomToolParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionCustomToolParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionCustomToolParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1243,6 +1276,7 @@ func (r ChatCompletionCustomToolCustomParam) MarshalJSON() (data []byte, err err
 	type shadow ChatCompletionCustomToolCustomParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionCustomToolCustomParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1259,6 +1293,7 @@ type ChatCompletionCustomToolCustomFormatUnionParam struct {
 func (u ChatCompletionCustomToolCustomFormatUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfText, u.OfGrammar)
 }
+
 func (u *ChatCompletionCustomToolCustomFormatUnionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -1318,6 +1353,7 @@ func (r ChatCompletionCustomToolCustomFormatTextParam) MarshalJSON() (data []byt
 	type shadow ChatCompletionCustomToolCustomFormatTextParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionCustomToolCustomFormatTextParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1339,6 +1375,7 @@ func (r ChatCompletionCustomToolCustomFormatGrammarParam) MarshalJSON() (data []
 	type shadow ChatCompletionCustomToolCustomFormatGrammarParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionCustomToolCustomFormatGrammarParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1360,6 +1397,7 @@ func (r ChatCompletionCustomToolCustomFormatGrammarGrammarParam) MarshalJSON() (
 	type shadow ChatCompletionCustomToolCustomFormatGrammarGrammarParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionCustomToolCustomFormatGrammarGrammarParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1389,6 +1427,7 @@ type ChatCompletionDeleted struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionDeleted) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionDeleted) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1415,6 +1454,7 @@ func (r ChatCompletionDeveloperMessageParam) MarshalJSON() (data []byte, err err
 	type shadow ChatCompletionDeveloperMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionDeveloperMessageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1431,6 +1471,7 @@ type ChatCompletionDeveloperMessageParamContentUnion struct {
 func (u ChatCompletionDeveloperMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfArrayOfContentParts)
 }
+
 func (u *ChatCompletionDeveloperMessageParamContentUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -1458,6 +1499,7 @@ func (r ChatCompletionFunctionCallOptionParam) MarshalJSON() (data []byte, err e
 	type shadow ChatCompletionFunctionCallOptionParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionFunctionCallOptionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1481,6 +1523,7 @@ func (r ChatCompletionFunctionMessageParam) MarshalJSON() (data []byte, err erro
 	type shadow ChatCompletionFunctionMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionFunctionMessageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1501,6 +1544,7 @@ func (r ChatCompletionFunctionToolParam) MarshalJSON() (data []byte, err error) 
 	type shadow ChatCompletionFunctionToolParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionFunctionToolParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1543,6 +1587,7 @@ type ChatCompletionMessage struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessage) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1617,6 +1662,7 @@ type ChatCompletionMessageAnnotation struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageAnnotation) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageAnnotation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1644,6 +1690,7 @@ type ChatCompletionMessageAnnotationURLCitation struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageAnnotationURLCitation) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageAnnotationURLCitation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1671,6 +1718,7 @@ type ChatCompletionMessageFunctionCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageFunctionCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageFunctionCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1695,6 +1743,7 @@ type ChatCompletionMessageCustomToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageCustomToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageCustomToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1726,6 +1775,7 @@ type ChatCompletionMessageCustomToolCallCustom struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageCustomToolCallCustom) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageCustomToolCallCustom) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1749,6 +1799,7 @@ func (r ChatCompletionMessageCustomToolCallParam) MarshalJSON() (data []byte, er
 	type shadow ChatCompletionMessageCustomToolCallParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionMessageCustomToolCallParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1768,6 +1819,7 @@ func (r ChatCompletionMessageCustomToolCallCustomParam) MarshalJSON() (data []by
 	type shadow ChatCompletionMessageCustomToolCallCustomParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionMessageCustomToolCallCustomParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1792,6 +1844,7 @@ type ChatCompletionMessageFunctionToolCall struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageFunctionToolCall) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageFunctionToolCall) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1826,6 +1879,7 @@ type ChatCompletionMessageFunctionToolCallFunction struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionMessageFunctionToolCallFunction) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionMessageFunctionToolCallFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1849,6 +1903,7 @@ func (r ChatCompletionMessageFunctionToolCallParam) MarshalJSON() (data []byte, 
 	type shadow ChatCompletionMessageFunctionToolCallParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionMessageFunctionToolCallParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1871,6 +1926,7 @@ func (r ChatCompletionMessageFunctionToolCallFunctionParam) MarshalJSON() (data 
 	type shadow ChatCompletionMessageFunctionToolCallFunctionParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionMessageFunctionToolCallFunctionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -1972,6 +2028,7 @@ func (u ChatCompletionMessageParamUnion) MarshalJSON() ([]byte, error) {
 		u.OfTool,
 		u.OfFunction)
 }
+
 func (u *ChatCompletionMessageParamUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2208,6 +2265,7 @@ type ChatCompletionMessageToolCallUnionParam struct {
 func (u ChatCompletionMessageToolCallUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfFunction, u.OfCustom)
 }
+
 func (u *ChatCompletionMessageToolCallUnionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2282,6 +2340,7 @@ func (r ChatCompletionNamedToolChoiceParam) MarshalJSON() (data []byte, err erro
 	type shadow ChatCompletionNamedToolChoiceParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNamedToolChoiceParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2297,6 +2356,7 @@ func (r ChatCompletionNamedToolChoiceFunctionParam) MarshalJSON() (data []byte, 
 	type shadow ChatCompletionNamedToolChoiceFunctionParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNamedToolChoiceFunctionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2318,6 +2378,7 @@ func (r ChatCompletionNamedToolChoiceCustomParam) MarshalJSON() (data []byte, er
 	type shadow ChatCompletionNamedToolChoiceCustomParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNamedToolChoiceCustomParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2333,6 +2394,7 @@ func (r ChatCompletionNamedToolChoiceCustomCustomParam) MarshalJSON() (data []by
 	type shadow ChatCompletionNamedToolChoiceCustomCustomParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNamedToolChoiceCustomCustomParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2358,6 +2420,7 @@ func (r ChatCompletionPredictionContentParam) MarshalJSON() (data []byte, err er
 	type shadow ChatCompletionPredictionContentParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionPredictionContentParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2374,6 +2437,7 @@ type ChatCompletionPredictionContentContentUnionParam struct {
 func (u ChatCompletionPredictionContentContentUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfArrayOfContentParts)
 }
+
 func (u *ChatCompletionPredictionContentContentUnionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2406,6 +2470,7 @@ type ChatCompletionStoreMessage struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionStoreMessage) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionStoreMessage) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2469,6 +2534,7 @@ func (r ChatCompletionStreamOptionsParam) MarshalJSON() (data []byte, err error)
 	type shadow ChatCompletionStreamOptionsParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionStreamOptionsParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2495,6 +2561,7 @@ func (r ChatCompletionSystemMessageParam) MarshalJSON() (data []byte, err error)
 	type shadow ChatCompletionSystemMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionSystemMessageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2511,6 +2578,7 @@ type ChatCompletionSystemMessageParamContentUnion struct {
 func (u ChatCompletionSystemMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfArrayOfContentParts)
 }
+
 func (u *ChatCompletionSystemMessageParamContentUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2553,6 +2621,7 @@ type ChatCompletionTokenLogprob struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionTokenLogprob) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionTokenLogprob) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2581,6 +2650,7 @@ type ChatCompletionTokenLogprobTopLogprob struct {
 
 // Returns the unmodified JSON received from the API
 func (r ChatCompletionTokenLogprobTopLogprob) RawJSON() string { return r.JSON.raw }
+
 func (r *ChatCompletionTokenLogprobTopLogprob) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2609,6 +2679,7 @@ type ChatCompletionToolUnionParam struct {
 func (u ChatCompletionToolUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfFunction, u.OfCustom)
 }
+
 func (u *ChatCompletionToolUnionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2689,6 +2760,7 @@ type ChatCompletionToolChoiceOptionUnionParam struct {
 func (u ChatCompletionToolChoiceOptionUnionParam) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfAuto, u.OfAllowedTools, u.OfFunctionToolChoice, u.OfCustomToolChoice)
 }
+
 func (u *ChatCompletionToolChoiceOptionUnionParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2770,6 +2842,7 @@ func (r ChatCompletionToolMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionToolMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionToolMessageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2786,6 +2859,7 @@ type ChatCompletionToolMessageParamContentUnion struct {
 func (u ChatCompletionToolMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfArrayOfContentParts)
 }
+
 func (u *ChatCompletionToolMessageParamContentUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2820,6 +2894,7 @@ func (r ChatCompletionUserMessageParam) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionUserMessageParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionUserMessageParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -2836,6 +2911,7 @@ type ChatCompletionUserMessageParamContentUnion struct {
 func (u ChatCompletionUserMessageParamContentUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfArrayOfContentParts)
 }
+
 func (u *ChatCompletionUserMessageParamContentUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -2882,6 +2958,7 @@ func (r ChatCompletionAllowedToolsParam) MarshalJSON() (data []byte, err error) 
 	type shadow ChatCompletionAllowedToolsParam
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionAllowedToolsParam) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -3134,6 +3211,7 @@ func (r ChatCompletionNewParams) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionNewParams
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNewParams) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -3151,6 +3229,7 @@ type ChatCompletionNewParamsFunctionCallUnion struct {
 func (u ChatCompletionNewParamsFunctionCallUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfFunctionCallMode, u.OfFunctionCallOption)
 }
+
 func (u *ChatCompletionNewParamsFunctionCallUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -3199,6 +3278,7 @@ func (r ChatCompletionNewParamsFunction) MarshalJSON() (data []byte, err error) 
 	type shadow ChatCompletionNewParamsFunction
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNewParamsFunction) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -3227,6 +3307,7 @@ type ChatCompletionNewParamsResponseFormatUnion struct {
 func (u ChatCompletionNewParamsResponseFormatUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfText, u.OfJSONSchema, u.OfJSONObject)
 }
+
 func (u *ChatCompletionNewParamsResponseFormatUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -3309,6 +3390,7 @@ type ChatCompletionNewParamsStopUnion struct {
 func (u ChatCompletionNewParamsStopUnion) MarshalJSON() ([]byte, error) {
 	return param.MarshalUnion(u, u.OfString, u.OfStringArray)
 }
+
 func (u *ChatCompletionNewParamsStopUnion) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, u)
 }
@@ -3351,6 +3433,7 @@ func (r ChatCompletionNewParamsWebSearchOptions) MarshalJSON() (data []byte, err
 	type shadow ChatCompletionNewParamsWebSearchOptions
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNewParamsWebSearchOptions) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -3378,6 +3461,7 @@ func (r ChatCompletionNewParamsWebSearchOptionsUserLocation) MarshalJSON() (data
 	type shadow ChatCompletionNewParamsWebSearchOptionsUserLocation
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNewParamsWebSearchOptionsUserLocation) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -3401,6 +3485,7 @@ func (r ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate) MarshalJ
 	type shadow ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionNewParamsWebSearchOptionsUserLocationApproximate) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
@@ -3420,6 +3505,7 @@ func (r ChatCompletionUpdateParams) MarshalJSON() (data []byte, err error) {
 	type shadow ChatCompletionUpdateParams
 	return param.MarshalObject(r, (*shadow)(&r))
 }
+
 func (r *ChatCompletionUpdateParams) UnmarshalJSON(data []byte) error {
 	return apijson.UnmarshalRoot(data, r)
 }
